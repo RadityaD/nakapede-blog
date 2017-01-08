@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Nakapede</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+  <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:700|Open+Sans" rel="stylesheet"/>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <b:skin><![CDATA[
+  html, body {
+    height: 100%;
+    font-family: "Open Sans";
+  }
+
+  hr {
+    height: 6px;
+    background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+    border: 0;
+  }
+
+  /*Header*/
+  #header, .site-header {
+    height: 100%;
+  }
+
+  #header-inner img {
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .imgctr {
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+  }
+
+  .descriptionwrapper {
+    font-size: 2rem;
+    padding-top: 40px;
+  }
+
+  #header-inner {
+    text-align: center;
+  }
+
+  .site-header {
+    background-color: #bad1c7;
+    padding: 40px;
+  }
+  /*Header End*/
+
+  .site-blog {
+    padding: 20px;
+  }
+
+  .post-title {
+    font-family: "Arima Madurai";
+  }
+
+  .site-footer {
+    background-color: #b6f29d;
+  }
+
+  .navbar {
+    margin-bottom: 0px;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 0;
+  }
+
+  .post-title {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .post-title a {
+    color: black;
+  }
+
+  .jump-link a {
+    font-size: 2rem;
+    color: white;
+  }
+
+  .post-footer {
+    padding: 10px;
+    text-align: center;
+  }
+
+  #main .container {
+    height: 100%;
+  }
+
+  @media (min-width: @screen-sm-min) {
+    .site-sidebar {
+        border-left: 2px solid;
+        display: inline-block;
+        vertical-align: middle;
+        float: none;
+    }
+  }
+
+  @media (max-width: @screen-xs-max) {
+    .site-sidebar {
+      border-top: 2px solid;
+    }
+  }
+
+	]]></b:skin>
+</head>
+<body>
+<!-- Navigation Start -->
+<nav class="navbar navbar-default navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mastnav" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <b:section id="logobrand" class="navbar-brand"></b:section>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="mastnav">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="#main">Blog</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  <!-- Header Start -->
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+  <div id="header">
+    <div class="site-header container-fluid text-center">
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- <h2>Header</h2>
+          <span>.col-xs-12</span> -->
+          <b:section id="header1"></b:section>
+        </div>
+      </div>
+    </div>
+  </div>
+</b:if>
+  <!-- Main Start -->
+  <div id="main">
+    <div class="container-fluid">
+      <div class="row">
+        <div id="blog" class="site-blog col-xs-12 col-md-8">
+          <!-- <h2>Blog</h2>
+          <span>.col-xs-12 .col-md-8</span> -->
+          <b:section id="mainblog">
+            <b:widget id="Blog1" type="Blog" locked="true" name="Blog Posts"></b:widget>
+          </b:section>
+        </div>
+        <div id="sidebar" class="site-sidebar col-xs-12 col-md-4">
+          <!-- <h2>Sidebar</h2>
+          <span>.col-xs-12 .col-md-4</span> -->
+          <b:section id="sidebar1"></b:section>
+        </div>
+        <div id="footer" class="site-footer col-xs-12 col-md-12">
+          <!-- <h2>Footer</h2>
+          <span>.col-xs-12 .col-md-12</span> -->
+          <b:section id="footer1"></b:section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $('.post').after().append('<hr/>');
+      $('.post-body a > img').addClass('imgctr');
+      $('.post-body').addClass('well');
+      $('.jump-link').wrap('<button></button>');
+      $('.post button').addClass('btn btn-primary btn-block');
+      //post-footer
+    });
+  </script>
+
+</body>
+</html>
